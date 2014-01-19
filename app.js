@@ -4,8 +4,6 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
@@ -16,7 +14,7 @@ var home = require('./controllers/home');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/layouts');
 app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
