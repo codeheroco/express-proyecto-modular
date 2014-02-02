@@ -3,6 +3,8 @@
  * Module dependencies.
  */
 
+require('./models');
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -11,6 +13,7 @@ var app = express();
 
 // modulos
 var home = require('./controllers/home');
+var user = require('./controllers/user');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -30,6 +33,7 @@ if ('development' == app.get('env')) {
 
 // rutas
 app.use(home);
+app.use(user);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

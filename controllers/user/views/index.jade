@@ -1,0 +1,8 @@
+h1 Usuarios
+
+ol
+  each user, i in users
+    li #{user.name} |
+      a(href="/user/edit/"+user.id)  editar
+      |  -
+      a(href="/user/delete/"+user.id)  eliminar

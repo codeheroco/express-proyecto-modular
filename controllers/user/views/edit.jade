@@ -1,0 +1,17 @@
+h1 Editar Usuario
+
+form(method="POST", action="/user/" + _id)
+
+  p Nombre:
+    input(type="text" name="name", value=name)
+
+  p Fecha de nacimiento:
+    input(type="date" name="birthdate", value=birthdate)
+
+  p ¿Es administrador?:
+    input(type="checkbox" name="isAdmin", checked=isAdmin)
+
+  input(type="hidden" name="_method" value="put")
+
+  p
+    button(type="submit") Enviar
